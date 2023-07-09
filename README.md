@@ -114,3 +114,37 @@ Replace `.eslintrc.json` content with the following config:
 ```
 
 [Link](https://blog.devgenius.io/eslint-prettier-typescript-and-react-in-2022-e5021ebca2b1)
+
+### 4. Setup Husky
+
+#### 4.1 Install husky
+
+```
+npm install husky --save-dev
+```
+
+Enable Git hooks
+
+```
+npx husky install
+```
+
+#### 4.2 Setup a script
+
+Add script to `package.json`
+
+```
+  {
+    "scripts": {
+      "prepare": "husky install"
+    }
+  }
+```
+
+#### 4.3 Create a hook
+
+```
+npx husky add .husky/pre-commit "npm run format && npm run lint:fix"
+```
+
+[Link](https://typicode.github.io/husky/getting-started.html)
